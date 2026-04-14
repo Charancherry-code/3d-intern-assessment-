@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scroll-Driven Hero Animation
 
-## Getting Started
+A premium hero section built with Next.js, Tailwind CSS, and GSAP ScrollTrigger.
 
-First, run the development server:
+The page focuses on smooth intro motion, scroll-linked transformation, and clean visual hierarchy for frontend internship evaluation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Demo Focus
+
+- Cinematic hero with animated headline and metric cards
+- Scroll-driven car movement tied to page progress
+- Responsive animation tuning for mobile and desktop
+- Performance-oriented animation using transform-based motion
+
+## Tech Stack
+
+- Next.js (App Router, TypeScript)
+- React
+- Tailwind CSS
+- GSAP + ScrollTrigger
+
+## Project Structure
+
+```text
+src/
+  app/
+    components/
+      HeroSection.tsx
+    layout.tsx
+    page.tsx
+public/
+  car-top-view.svg
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Build and Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Animation Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Intro sequence uses a GSAP timeline for:
+  - letter-by-letter headline reveal
+  - staggered stat card entrance
+  - car entry transition
+- Scroll sequence uses `ScrollTrigger` with `scrub`:
+  - car position, scale, and rotation linked to scroll progress
+  - headline parallax/fade on scroll
+  - mobile-specific reduced-intensity motion via `gsap.matchMedia()`
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy easily on [Vercel](https://vercel.com/).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For static-only hosting (for example GitHub Pages), configure static export in `next.config.ts` and deploy the generated output.
